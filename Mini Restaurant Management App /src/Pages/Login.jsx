@@ -11,9 +11,31 @@ function Login(){
     },[])
     const handlelogin=(e)=>{
         e.preventDefault();
-        if(e)
+        if(email==="admin@gmail.com"&&password==="admin1234"){
+              alert("Login Successful")
+        }
+        else{
+            alert("Inavalid email or password")
+        }
+          
     }
     return(
+        <div class="container">
+            <h2>Login Page</h2>
+            <form onSubmit={handlelogin}>
+                <input
+                type="email"
+                placeholder="Email"
+                ref={emailRef}
+                value={email}
+                onChange={(e)=>setEmail(e.target.value)}/>
+                <input 
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e)=>setPassword(e.target.value)}/>
+            </form>
+        </div>
 
     )
 }
