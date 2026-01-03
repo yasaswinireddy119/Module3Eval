@@ -34,10 +34,35 @@ function Admin(){
 
                 <input
                 type="text"
-                name="name"
-                placeholder="Restaurant Name"
-                value={restaurantName}
+                name="type"
+                
+                value={restaurant.location}
                 onChange={handleChange}/>
+                <select
+                name="type"
+                value={restaurant.type}
+                onChange={handleChange}>
+                    <option value="">Select Type</option>
+                    <option value="">Rajasthani</option
+                    <option value="">Gujarati</option
+                    <option value="">Mughlai</option
+                    <option value="">Jain</option
+                    <option value="">Thai</option
+                    <option value=""> North Indian</option>
+                    <option value="">South Indian</option>
+
+                </select>
+
+                <select
+                name="type"
+                value={parkingLot}
+                onChange={handleChange}>
+                    <option value="">Yes</option>
+                    <option value="">No</option>
+                 
+
+                </select>
+
 
 
                 
