@@ -3,7 +3,7 @@ import { useState } from "react";
 function Admin(){
     const[restaurant,setRestaurant]=useState({
         "restaurantID": 26,
-  "restaurantName": "1135 AD",
+    "restaurantName": "1135 AD",
   "address": "Jaipur, Amber Fort, Rajasthan",
   "type": "Rajasthani",
   "parkingLot": true,
@@ -12,10 +12,39 @@ function Admin(){
 
     })
     const handleSubmit =(e)=>{
-        e.preventDefault
+        e.preventDefault();
+        console.log(restaurant)
+        
     }
     return(
-        <h2>Admin Page</h2>
+        <div className="admin-layout">
+            <h2>Admin Page</h2>
+            <form onSubmit={handleSubmit}
+            className="form">
+                <input
+                type="text"
+                value={restaurantID}/>
+
+                <input
+                type="text"
+                name="name"
+                placeholder="Restaurant Name"
+                value={restaurantName}
+                onChange={handleChange}/>
+
+                <input
+                type="text"
+                name="name"
+                placeholder="Restaurant Name"
+                value={restaurantName}
+                onChange={handleChange}/>
+
+
+                
+            </form>
+
+        </div>
+        
 
 
     )
