@@ -14,8 +14,21 @@ function Admin(){
     const handleSubmit =(e)=>{
         e.preventDefault();
         console.log(restaurant)
-        
+        const existingData=JSON.parse(localStorage.getItem("restaurants"))||[]
+        const updatedData=[...existingData,restaurant]
+        localStorage.setItem("restuarants",JSON.stringify(updatedData))
+        alert("Added Successfully")
     }
+    setRestaurant({
+        restaurantID:"",
+        restaurantName:"",
+        address:"",
+        type:"",
+        parkingLot:"",
+        image:"https://coding-platform.s3.amazonaws.com/dev/lms/tickets/7524df6e-46fa-4506-8766-eca8da47c2f1/2izhqnTaNLdenHYF.jpeg"
+
+
+    })
     return(
         <div className="admin-layout">
             <h2>Admin Page</h2>
@@ -43,11 +56,11 @@ function Admin(){
                 value={restaurant.type}
                 onChange={handleChange}>
                     <option value="">Select Type</option>
-                    <option value="">Rajasthani</option
-                    <option value="">Gujarati</option
-                    <option value="">Mughlai</option
-                    <option value="">Jain</option
-                    <option value="">Thai</option
+                    <option value="">Rajasthani</option>
+                    <option value="">Gujarati</option>
+                    <option value="">Mughlai</option>
+                    <option value="">Jain</option>
+                    <option value="">Thai</option>
                     <option value=""> North Indian</option>
                     <option value="">South Indian</option>
 
@@ -62,6 +75,7 @@ function Admin(){
                  
 
                 </select>
+                <button type="submit">Add Restaurant</button>
 
 
 
