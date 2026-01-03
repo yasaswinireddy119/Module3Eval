@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+
 function Login(){
     const[email,setEmail]=useState("")
     const[password,setPassword]=useState("")
@@ -22,9 +23,17 @@ function Login(){
         }
           
     }
+
+    const containerStyle={
+        width:"300px",
+        margin:"11px auto",
+        padding:"20px",
+        border:"1px solid black",
+        color:"#f37070ff"
+    }
     
     return(
-        <div className="container">
+        <div  className="container" style={containerStyle}>
             <h2>Login Page</h2>
             <form onSubmit={handlelogin}>
                 <input
